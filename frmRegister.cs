@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace expressLoan
 {
-    public partial class frmHome : Form
+    public partial class frmRegister : Form
     {
-        public frmHome()
+        public frmRegister()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
     }
-
 }

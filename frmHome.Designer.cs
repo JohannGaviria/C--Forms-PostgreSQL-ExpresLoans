@@ -44,6 +44,7 @@
             this.lblSaldoNum = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbDinero = new System.Windows.Forms.GroupBox();
+            this.btnSaldo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosPedientes)).BeginInit();
             this.gbMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagosRecientes)).BeginInit();
@@ -65,6 +66,7 @@
             this.btnRegistrarPago.TabIndex = 5;
             this.btnRegistrarPago.Text = "Registrar Pago";
             this.btnRegistrarPago.UseVisualStyleBackColor = true;
+            this.btnRegistrarPago.Click += new System.EventHandler(this.btnRegistrarPago_Click);
             // 
             // btnNuevoPrestamo
             // 
@@ -74,6 +76,7 @@
             this.btnNuevoPrestamo.TabIndex = 6;
             this.btnNuevoPrestamo.Text = "Nuevo Prestamo";
             this.btnNuevoPrestamo.UseVisualStyleBackColor = true;
+            this.btnNuevoPrestamo.Click += new System.EventHandler(this.btnNuevoPrestamo_Click);
             // 
             // lblSaldo
             // 
@@ -122,6 +125,7 @@
             this.btnPagosRecientes.TabIndex = 11;
             this.btnPagosRecientes.Text = "Ver mas";
             this.btnPagosRecientes.UseVisualStyleBackColor = true;
+            this.btnPagosRecientes.Click += new System.EventHandler(this.btnPagosRecientes_Click);
             // 
             // btnPrestamosPedientes
             // 
@@ -131,6 +135,7 @@
             this.btnPrestamosPedientes.TabIndex = 12;
             this.btnPrestamosPedientes.Text = "Ver mas";
             this.btnPrestamosPedientes.UseVisualStyleBackColor = true;
+            this.btnPrestamosPedientes.Click += new System.EventHandler(this.btnPrestamosPedientes_Click);
             // 
             // btnCliente
             // 
@@ -140,6 +145,7 @@
             this.btnCliente.TabIndex = 13;
             this.btnCliente.Text = "Clientes";
             this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
             // btnSalir
             // 
@@ -149,10 +155,12 @@
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // gbMenu
             // 
             this.gbMenu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gbMenu.Controls.Add(this.btnSaldo);
             this.gbMenu.Controls.Add(this.btnCliente);
             this.gbMenu.Controls.Add(this.btnSalir);
             this.gbMenu.Controls.Add(this.btnRegistrarPago);
@@ -197,10 +205,20 @@
             this.gbDinero.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.gbDinero.Location = new System.Drawing.Point(585, 0);
             this.gbDinero.Name = "gbDinero";
-            this.gbDinero.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.gbDinero.Padding = new System.Windows.Forms.Padding(0);
             this.gbDinero.Size = new System.Drawing.Size(187, 72);
             this.gbDinero.TabIndex = 19;
             this.gbDinero.TabStop = false;
+            // 
+            // btnSaldo
+            // 
+            this.btnSaldo.Location = new System.Drawing.Point(22, 208);
+            this.btnSaldo.Name = "btnSaldo";
+            this.btnSaldo.Size = new System.Drawing.Size(115, 25);
+            this.btnSaldo.TabIndex = 15;
+            this.btnSaldo.Text = "Saldo";
+            this.btnSaldo.UseVisualStyleBackColor = true;
+            this.btnSaldo.Click += new System.EventHandler(this.btnSaldo_Click);
             // 
             // frmHome
             // 
@@ -224,6 +242,8 @@
             this.MinimumSize = new System.Drawing.Size(790, 490);
             this.Name = "frmHome";
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmHome_FormClosing);
+            this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosPedientes)).EndInit();
             this.gbMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagosRecientes)).EndInit();
@@ -250,6 +270,7 @@
         private System.Windows.Forms.Label lblSaldoNum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbDinero;
+        private System.Windows.Forms.Button btnSaldo;
     }
 }
 

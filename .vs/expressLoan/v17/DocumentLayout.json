@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\johan\\source\\repos\\expressLoan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|C:\\Users\\johan\\source\\repos\\expressLoan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "home.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\home.cs",
-              "RelativeDocumentMoniker": "home.cs",
-              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\home.cs [Dise\u00F1o]",
-              "RelativeToolTip": "home.cs [Dise\u00F1o]",
+              "Title": "frmHome.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs",
+              "RelativeDocumentMoniker": "frmHome.cs",
+              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmHome.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T14:05:04.449Z",
+              "WhenOpened": "2024-05-17T23:39:44.476Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "home.cs",
-              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\home.cs",
-              "RelativeDocumentMoniker": "home.cs",
-              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\home.cs",
-              "RelativeToolTip": "home.cs",
-              "ViewState": "AQIAAAYAAAAgmpmZmRkvwBEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T14:11:45.358Z",
-              "EditorCaption": ""
             }
           ]
         }

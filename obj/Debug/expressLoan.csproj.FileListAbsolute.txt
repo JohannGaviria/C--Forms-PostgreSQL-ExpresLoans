@@ -8,3 +8,11 @@ C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.csproj.GenerateRes
 C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.csproj.CoreCompileInputs.cache
 C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.exe
 C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.pdb
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmCustomer.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmLoans.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmLogin.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmNewLoans.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmPayments.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmRegister.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmRegisterPayment.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmBalance.resources
