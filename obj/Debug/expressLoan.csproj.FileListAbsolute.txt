@@ -1,0 +1,10 @@
+C:\Users\johan\source\repos\expressLoan\bin\Debug\expressLoan.exe.config
+C:\Users\johan\source\repos\expressLoan\bin\Debug\expressLoan.exe
+C:\Users\johan\source\repos\expressLoan\bin\Debug\expressLoan.pdb
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.csproj.AssemblyReference.cache
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.frmHome.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.Properties.Resources.resources
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.csproj.GenerateResource.cache
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.csproj.CoreCompileInputs.cache
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.exe
+C:\Users\johan\source\repos\expressLoan\obj\Debug\expressLoan.pdb
