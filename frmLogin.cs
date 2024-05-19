@@ -16,6 +16,14 @@ namespace expressLoan
 {
     public partial class frmLogin : Form
     {
+        public static class UserSession
+        {
+            public static int UserId { get; set; }
+            public static string Nombre { get; set; }
+            public static string Email { get; set; }
+            public static string Celular { get; set; }
+        }
+
         public frmLogin()
         {
             InitializeComponent();
@@ -67,31 +75,39 @@ namespace expressLoan
 
                 try
                 {
-                    string query = "SELECT contrasena FROM usuarios WHERE email = @email";
+                    string query = "SELECT id, nombre, email, celular, contrasena FROM usuarios WHERE email = @Email";
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("email", email);
 
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
                         {
-                            string contrasenaAlmacenada = result.ToString();
-                            if (VerificarContrasena(txtContrasena.Text, contrasenaAlmacenada))
+                            if (reader.Read())
                             {
-                                MessageBox.Show("Inicio de sesión exitoso!");
+                                string contrasenaAlmacenada = reader["contrasena"].ToString();
+                                if (VerificarContrasena(txtContrasena.Text, contrasenaAlmacenada))
+                                {
+                                    // Guardar los datos del usuario en UserSession
+                                    UserSession.UserId = Convert.ToInt32(reader["id"]);
+                                    UserSession.Nombre = reader["nombre"].ToString();
+                                    UserSession.Email = reader["email"].ToString();
+                                    UserSession.Celular = reader["celular"].ToString();
 
-                                frmHome admin = new frmHome();
-                                admin.Show();
-                                this.Hide();
+                                    MessageBox.Show("Inicio de sesión exitoso!");
+
+                                    frmHome admin = new frmHome();
+                                    admin.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+                                }
                             }
                             else
                             {
                                 MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
                         }
                     }
                 }

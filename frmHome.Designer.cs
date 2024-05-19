@@ -40,11 +40,11 @@
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.gbMenu = new System.Windows.Forms.GroupBox();
+            this.btnSaldo = new System.Windows.Forms.Button();
             this.dgvPagosRecientes = new System.Windows.Forms.DataGridView();
             this.lblSaldoNum = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gbDinero = new System.Windows.Forms.GroupBox();
-            this.btnSaldo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosPedientes)).BeginInit();
             this.gbMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagosRecientes)).BeginInit();
@@ -172,6 +172,16 @@
             this.gbMenu.TabStop = false;
             this.gbMenu.Text = "Menu";
             // 
+            // btnSaldo
+            // 
+            this.btnSaldo.Location = new System.Drawing.Point(22, 208);
+            this.btnSaldo.Name = "btnSaldo";
+            this.btnSaldo.Size = new System.Drawing.Size(115, 25);
+            this.btnSaldo.TabIndex = 15;
+            this.btnSaldo.Text = "Saldo";
+            this.btnSaldo.UseVisualStyleBackColor = true;
+            this.btnSaldo.Click += new System.EventHandler(this.btnSaldo_Click);
+            // 
             // dgvPagosRecientes
             // 
             this.dgvPagosRecientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -209,16 +219,6 @@
             this.gbDinero.Size = new System.Drawing.Size(187, 72);
             this.gbDinero.TabIndex = 19;
             this.gbDinero.TabStop = false;
-            // 
-            // btnSaldo
-            // 
-            this.btnSaldo.Location = new System.Drawing.Point(22, 208);
-            this.btnSaldo.Name = "btnSaldo";
-            this.btnSaldo.Size = new System.Drawing.Size(115, 25);
-            this.btnSaldo.TabIndex = 15;
-            this.btnSaldo.Text = "Saldo";
-            this.btnSaldo.UseVisualStyleBackColor = true;
-            this.btnSaldo.Click += new System.EventHandler(this.btnSaldo_Click);
             // 
             // frmHome
             // 

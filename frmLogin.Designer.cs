@@ -60,6 +60,7 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.Location = new System.Drawing.Point(88, 295);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(115, 25);
@@ -71,6 +72,7 @@
             // lblTexto
             // 
             this.lblTexto.AutoSize = true;
+            this.lblTexto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTexto.Location = new System.Drawing.Point(53, 236);
             this.lblTexto.Name = "lblTexto";
             this.lblTexto.Size = new System.Drawing.Size(183, 13);
@@ -113,9 +115,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(76, 37);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(26, 29);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(136, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(249, 25);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Inicio de Sesión de Usuario";
             // 

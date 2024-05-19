@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbRegistro = new System.Windows.Forms.GroupBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.txtCelular = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblContrasena = new System.Windows.Forms.Label();
-            this.lblCelular = new System.Windows.Forms.Label();
-            this.lblTexto = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
+            this.lblTexto = new System.Windows.Forms.Label();
+            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblContrasena = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.epRegistro = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epRegistro)).BeginInit();
@@ -66,69 +66,27 @@
             this.gbRegistro.TabIndex = 0;
             this.gbRegistro.TabStop = false;
             // 
-            // lblTitulo
+            // btnRegistrar
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(94, 25);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(100, 13);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Registro de Usuario";
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.Location = new System.Drawing.Point(88, 316);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(115, 25);
+            this.btnRegistrar.TabIndex = 11;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // txtNombre
+            // lblTexto
             // 
-            this.txtNombre.Location = new System.Drawing.Point(56, 85);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(180, 20);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(56, 141);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(180, 20);
-            this.txtEmail.TabIndex = 2;
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.Location = new System.Drawing.Point(56, 196);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(180, 20);
-            this.txtContrasena.TabIndex = 3;
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(56, 250);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(180, 20);
-            this.txtCelular.TabIndex = 4;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(53, 69);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(94, 13);
-            this.lblNombre.TabIndex = 5;
-            this.lblNombre.Text = "Nombre Completo:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(53, 125);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(97, 13);
-            this.lblEmail.TabIndex = 6;
-            this.lblEmail.Text = "Correo Electronico:";
-            // 
-            // lblContrasena
-            // 
-            this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(53, 180);
-            this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(61, 13);
-            this.lblContrasena.TabIndex = 7;
-            this.lblContrasena.Text = "Contraseña";
+            this.lblTexto.AutoSize = true;
+            this.lblTexto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTexto.Location = new System.Drawing.Point(53, 291);
+            this.lblTexto.Name = "lblTexto";
+            this.lblTexto.Size = new System.Drawing.Size(182, 13);
+            this.lblTexto.TabIndex = 10;
+            this.lblTexto.Text = "¿Ya tienes una cuenta? Ingresa Aqui";
+            this.lblTexto.Click += new System.EventHandler(this.lblTexto_Click);
             // 
             // lblCelular
             // 
@@ -139,25 +97,70 @@
             this.lblCelular.TabIndex = 8;
             this.lblCelular.Text = "Numero Celular:";
             // 
-            // lblTexto
+            // lblContrasena
             // 
-            this.lblTexto.AutoSize = true;
-            this.lblTexto.Location = new System.Drawing.Point(53, 291);
-            this.lblTexto.Name = "lblTexto";
-            this.lblTexto.Size = new System.Drawing.Size(182, 13);
-            this.lblTexto.TabIndex = 10;
-            this.lblTexto.Text = "¿Ya tienes una cuenta? Ingresa Aqui";
-            this.lblTexto.Click += new System.EventHandler(this.lblTexto_Click);
+            this.lblContrasena.AutoSize = true;
+            this.lblContrasena.Location = new System.Drawing.Point(53, 180);
+            this.lblContrasena.Name = "lblContrasena";
+            this.lblContrasena.Size = new System.Drawing.Size(61, 13);
+            this.lblContrasena.TabIndex = 7;
+            this.lblContrasena.Text = "Contraseña";
             // 
-            // btnRegistrar
+            // lblEmail
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(88, 316);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(115, 25);
-            this.btnRegistrar.TabIndex = 11;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(53, 125);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(97, 13);
+            this.lblEmail.TabIndex = 6;
+            this.lblEmail.Text = "Correo Electronico:";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(53, 69);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(94, 13);
+            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Text = "Nombre Completo:";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(56, 250);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(180, 20);
+            this.txtCelular.TabIndex = 4;
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(56, 196);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(180, 20);
+            this.txtContrasena.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(56, 141);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(180, 20);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(56, 85);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(180, 20);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(54, 16);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(182, 25);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Registro de Usuario";
             // 
             // epRegistro
             // 

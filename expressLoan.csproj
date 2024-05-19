@@ -96,6 +96,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CustomControls.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="frmBalance.cs">
       <SubType>Form</SubType>
