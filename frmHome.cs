@@ -49,6 +49,13 @@ namespace expressLoan
             this.Hide();
         }
 
+        private void btnSaldo_Click(object sender, EventArgs e)
+        {
+            frmBalance frmBalance = new frmBalance();
+            frmBalance.Show();
+            this.Hide();
+        }
+
         private void btnPagosRecientes_Click(object sender, EventArgs e)
         {
             frmPayments frmPayments = new frmPayments();
@@ -68,12 +75,6 @@ namespace expressLoan
             Application.Exit();
         }
 
-        private void btnSaldo_Click(object sender, EventArgs e)
-        {
-            frmBalance frmBalance = new frmBalance();
-            frmBalance.Show();
-            this.Hide();
-        }
     }
 
 }
