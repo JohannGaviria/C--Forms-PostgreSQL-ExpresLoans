@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\johan\\source\\repos\\expressLoan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -19,8 +15,12 @@
       "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\clases\\saldomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:clases\\saldomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,65 +38,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmNewLoans.cs",
-              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs",
-              "RelativeDocumentMoniker": "frmNewLoans.cs",
-              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs",
-              "RelativeToolTip": "frmNewLoans.cs",
-              "ViewState": "AQIAACcBAAAAAAAAAAAwwDUBAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T22:25:27.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SaldoManager.cs",
-              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\Clases\\SaldoManager.cs",
-              "RelativeDocumentMoniker": "Clases\\SaldoManager.cs",
-              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\Clases\\SaldoManager.cs",
-              "RelativeToolTip": "Clases\\SaldoManager.cs",
-              "ViewState": "AQIAADIAAAAAmJmZmZkfwDYAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T21:44:00.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "frmHome.cs",
               "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs",
               "RelativeDocumentMoniker": "frmHome.cs",
               "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs",
               "RelativeToolTip": "frmHome.cs",
-              "ViewState": "AQIAAE8AAAAAopmZmZnxv3MAAABDAAAA",
+              "ViewState": "AQIAAFAAAAAAZmZmZmYYwGAAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T21:42:44.234Z",
+              "WhenOpened": "2024-05-21T23:52:00.446Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "frmHome.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs",
               "RelativeDocumentMoniker": "frmHome.cs",
               "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs [Dise\u00F1o]",
               "RelativeToolTip": "frmHome.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T21:39:58.419Z",
+              "WhenOpened": "2024-05-21T23:51:58.123Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmNewLoans.cs [Dise\u00F1o]",
+              "DocumentIndex": 4,
+              "Title": "frmNewLoans.cs",
               "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs",
               "RelativeDocumentMoniker": "frmNewLoans.cs",
-              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs [Dise\u00F1o]",
-              "RelativeToolTip": "frmNewLoans.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs",
+              "RelativeToolTip": "frmNewLoans.cs",
+              "ViewState": "AQIAAC0BAAAAaGZmZmYkwCYBAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T13:13:14.04Z",
+              "WhenOpened": "2024-05-21T23:29:28.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmCustomer.cs",
+              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmCustomer.cs",
+              "RelativeDocumentMoniker": "frmCustomer.cs",
+              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmCustomer.cs",
+              "RelativeToolTip": "frmCustomer.cs",
+              "ViewState": "AQIAAPAAAABgmZmZmZk5wBoBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T22:46:46.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmCustomer.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmCustomer.cs",
+              "RelativeDocumentMoniker": "frmCustomer.cs",
+              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmCustomer.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmCustomer.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T22:33:06.746Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

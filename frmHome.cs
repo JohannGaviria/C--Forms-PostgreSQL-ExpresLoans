@@ -94,7 +94,7 @@ namespace expressLoan
                              INNER JOIN clientes c ON p.cliente_id = c.id
                              WHERE p.usuario_id = @usuario_id AND p.estado = 'Pendiente' 
                              ORDER BY p.fecha_prestamo DESC 
-                             LIMIT 5";
+                             LIMIT 8";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
