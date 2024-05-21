@@ -1,4 +1,5 @@
-﻿using System;
+﻿using expressLoan.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static expressLoan.frmBalance;
+using static expressLoan.frmLogin;
 
 namespace expressLoan
 {
@@ -20,7 +23,7 @@ namespace expressLoan
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-
+            lblSaldoNum.Text = SaldoManager.CargarSaldo(UserSession.UserId);
         }
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)

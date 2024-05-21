@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,12 +13,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static expressLoan.frmLogin;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using OfficeOpenXml;
 
 namespace expressLoan
 {
     public partial class frmBalance : Form
     {
         private GroupBox currentModal;
+
+        public static class SaldoSession
+        {
+            public static string Saldo { get; set; }
+        }
 
         public frmBalance()
         {
@@ -78,6 +85,8 @@ namespace expressLoan
                 return;
             }
 
+            decimal saldoAIngresar = decimal.Parse(txtSaldo.Text);
+
             Conexion.Conexion conexion = new Conexion.Conexion();
             NpgsqlConnection conn = conexion.connection();
 
@@ -85,17 +94,42 @@ namespace expressLoan
             {
                 try
                 {
-                    // Transacción para asegurar la integridad de las inserciones
+                    // Transacción para asegurar la integridad de las operaciones
                     using (var transaction = conn.BeginTransaction())
                     {
-                        // Inserción en la tabla 'saldos'
-                        string insertSaldosQuery = "INSERT INTO saldos (usuario_id, saldo) VALUES (@usuario_id, @saldo)";
-                       
-                        using (NpgsqlCommand cmd = new NpgsqlCommand(insertSaldosQuery, conn))
+                        // Verificar si ya existe un saldo para el usuario
+                        string querySaldoExistente = "SELECT saldo FROM saldos WHERE usuario_id = @usuario_id";
+                        object result;
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(querySaldoExistente, conn))
                         {
                             cmd.Parameters.AddWithValue("@usuario_id", UserSession.UserId);
-                            cmd.Parameters.AddWithValue("@saldo", txtSaldo.Text);
-                            cmd.ExecuteNonQuery();
+                            result = cmd.ExecuteScalar();
+                        }
+
+                        if (result != null)
+                        {
+                            // El usuario ya tiene un saldo, actualizarlo
+                            decimal saldoExistente = decimal.Parse(result.ToString());
+                            decimal nuevoSaldo = saldoExistente + saldoAIngresar;
+
+                            string updateSaldoQuery = "UPDATE saldos SET saldo = @nuevo_saldo WHERE usuario_id = @usuario_id";
+                            using (NpgsqlCommand cmd = new NpgsqlCommand(updateSaldoQuery, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@nuevo_saldo", nuevoSaldo.ToString());
+                                cmd.Parameters.AddWithValue("@usuario_id", UserSession.UserId);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            // El usuario no tiene saldo, crear un nuevo registro
+                            string insertSaldosQuery = "INSERT INTO saldos (usuario_id, saldo) VALUES (@usuario_id, @saldo)";
+                            using (NpgsqlCommand cmd = new NpgsqlCommand(insertSaldosQuery, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@usuario_id", UserSession.UserId);
+                                cmd.Parameters.AddWithValue("@saldo", saldoAIngresar.ToString());
+                                cmd.ExecuteNonQuery();
+                            }
                         }
 
                         // Inserción en la tabla 'historial_saldo'
@@ -103,8 +137,8 @@ namespace expressLoan
                         using (NpgsqlCommand cmd = new NpgsqlCommand(insertHistorialQuery, conn))
                         {
                             cmd.Parameters.AddWithValue("@id_usuario", UserSession.UserId);
-                            cmd.Parameters.AddWithValue("@tipo_movimiento", "Depósito");
-                            cmd.Parameters.AddWithValue("@monto", txtSaldo.Text);
+                            cmd.Parameters.AddWithValue("@tipo_movimiento", "Ingreso");
+                            cmd.Parameters.AddWithValue("@monto", saldoAIngresar.ToString());
                             cmd.ExecuteNonQuery();
                         }
 
@@ -114,8 +148,8 @@ namespace expressLoan
 
                     MessageBox.Show("Saldo Agregado");
 
-                    CargarSaldo();
-                    CargarHistorialSaldo();
+                    lblSaldoNum.Text = SaldoManager.CargarSaldo(UserSession.UserId);
+                    SaldoManager.CargarHistorialSaldo(UserSession.UserId, dgvHistorial);
 
                     if (currentModal != null)
                     {
@@ -136,7 +170,6 @@ namespace expressLoan
             {
                 MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
             }
-
         }
 
         private void OnAceptarRetirar(object sender, EventArgs e)
@@ -151,14 +184,93 @@ namespace expressLoan
                 return;
             }
 
-            MessageBox.Show("Saldo Retirado");
+            decimal saldoARetirar = decimal.Parse(txtSaldo.Text);
 
-            if (currentModal != null)
+            Conexion.Conexion conexion = new Conexion.Conexion();
+            NpgsqlConnection conn = conexion.connection();
+
+            if (conn.State == System.Data.ConnectionState.Open)
             {
-                this.Controls.Remove(currentModal);
-                currentModal = null;
+                try
+                {
+                    // Transacción para asegurar la integridad de las operaciones
+                    using (var transaction = conn.BeginTransaction())
+                    {
+                        // Verificar si ya existe un saldo para el usuario
+                        string querySaldoExistente = "SELECT saldo FROM saldos WHERE usuario_id = @usuario_id";
+                        object result;
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(querySaldoExistente, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@usuario_id", UserSession.UserId);
+                            result = cmd.ExecuteScalar();
+                        }
+
+                        if (result != null)
+                        {
+                            decimal saldoExistente = decimal.Parse(result.ToString());
+
+                            if (saldoExistente >= saldoARetirar)
+                            {
+                                decimal nuevoSaldo = saldoExistente - saldoARetirar;
+
+                                string updateSaldoQuery = "UPDATE saldos SET saldo = @nuevo_saldo WHERE usuario_id = @usuario_id";
+                                using (NpgsqlCommand cmd = new NpgsqlCommand(updateSaldoQuery, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@nuevo_saldo", nuevoSaldo.ToString());
+                                    cmd.Parameters.AddWithValue("@usuario_id", UserSession.UserId);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // Inserción en la tabla 'historial_saldo'
+                                string insertHistorialQuery = "INSERT INTO historial_saldo (id_usuario, fecha, tipo_movimiento, monto) VALUES (@id_usuario, CURRENT_TIMESTAMP, @tipo_movimiento, @monto)";
+                                using (NpgsqlCommand cmd = new NpgsqlCommand(insertHistorialQuery, conn))
+                                {
+                                    cmd.Parameters.AddWithValue("@id_usuario", UserSession.UserId);
+                                    cmd.Parameters.AddWithValue("@tipo_movimiento", "Retiro");
+                                    cmd.Parameters.AddWithValue("@monto", saldoARetirar.ToString());
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // Confirmar la transacción
+                                transaction.Commit();
+
+                                MessageBox.Show("Saldo Retirado");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Saldo insuficiente para realizar la retirada.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No hay saldo disponible para retirar.");
+                        }
+
+                        lblSaldoNum.Text = SaldoManager.CargarSaldo(UserSession.UserId);
+                        SaldoManager.CargarHistorialSaldo(UserSession.UserId, dgvHistorial);
+
+                        if (currentModal != null)
+                        {
+                            this.Controls.Remove(currentModal);
+                            currentModal = null;
+                        }
+                    }
+                }
+                catch (NpgsqlException ex)
+                {
+                    MessageBox.Show("Error al retirar el saldo: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
             }
         }
+
 
         private bool ValidarSaldo(string saldo)
         {
@@ -174,100 +286,48 @@ namespace expressLoan
 
         private void frmBalance_Load(object sender, EventArgs e)
         {
-            CargarSaldo();
-            CargarHistorialSaldo();
+            lblSaldoNum.Text = SaldoManager.CargarSaldo(UserSession.UserId);
+            SaldoManager.CargarHistorialSaldo(UserSession.UserId, dgvHistorial);
         }
 
-        private void CargarSaldo()
+        private void btnExportar_Click(object sender, EventArgs e)
         {
-            Conexion.Conexion conexion = new Conexion.Conexion();
-            NpgsqlConnection conn = conexion.connection();
+            ExportarHistorialAExcel(dgvHistorial);
+        }
 
-            if (conn.State == System.Data.ConnectionState.Open)
+        private void ExportarHistorialAExcel(DataGridView dgvHistorial)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", FileName = "HistorialSaldo.xlsx" })
             {
-                try
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    string query = "SELECT SUM(CAST(saldo AS numeric)) FROM saldos WHERE usuario_id = @usuario_id";
-                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    using (ExcelPackage pck = new ExcelPackage())
                     {
-                        cmd.Parameters.AddWithValue("usuario_id", UserSession.UserId);
+                        ExcelWorksheet ws = pck.Workbook.Worksheets.Add("HistorialSaldo");
 
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        // Add the headers
+                        for (int col = 0; col < dgvHistorial.Columns.Count; col++)
                         {
-                            lblSaldoNum.Text = result.ToString();
+                            ws.Cells[1, col + 1].Value = dgvHistorial.Columns[col].HeaderText;
                         }
-                        else
+
+                        // Add the rows
+                        for (int row = 0; row < dgvHistorial.Rows.Count; row++)
                         {
-                            lblSaldoNum.Text = "Sin saldo";
+                            for (int col = 0; col < dgvHistorial.Columns.Count; col++)
+                            {
+                                ws.Cells[row + 2, col + 1].Value = dgvHistorial.Rows[row].Cells[col].Value?.ToString();
+                            }
                         }
+
+                        // Save the file
+                        FileInfo fi = new FileInfo(sfd.FileName);
+                        pck.SaveAs(fi);
+
+                        MessageBox.Show("Exportación exitosa", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (NpgsqlException ex)
-                {
-                    MessageBox.Show("Error al cargar el saldo: " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
             }
         }
-
-        private void CargarHistorialSaldo()
-        {
-            Conexion.Conexion conexion = new Conexion.Conexion();
-            NpgsqlConnection conn = conexion.connection();
-
-            if (conn.State == System.Data.ConnectionState.Open)
-            {
-                try
-                {
-                    string query = "SELECT fecha, tipo_movimiento, monto FROM historial_saldo WHERE id_usuario = @id_usuario";
-                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@id_usuario", UserSession.UserId);
-
-                        NpgsqlDataReader reader = cmd.ExecuteReader();
-
-                        // Limpiar filas existentes y definir columnas si es necesario
-                        dgvHistorial.Rows.Clear();
-                        if (dgvHistorial.Columns.Count == 0)
-                        {
-                            dgvHistorial.Columns.Add("fecha", "Fecha");
-                            dgvHistorial.Columns.Add("tipo_movimiento", "Tipo de Movimiento");
-                            dgvHistorial.Columns.Add("monto", "Monto");
-                        }
-
-                        while (reader.Read())
-                        {
-                            // Agregar fila al DataGridView
-                            dgvHistorial.Rows.Add(reader["fecha"], reader["tipo_movimiento"], reader["monto"]);
-                        }
-                        dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-                    }
-                }
-                catch (NpgsqlException ex)
-                {
-                    MessageBox.Show("Error al cargar el historial de saldo: " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
-            }
-        }
-
-
     }
 }

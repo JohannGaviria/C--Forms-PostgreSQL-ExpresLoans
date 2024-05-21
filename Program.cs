@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 namespace expressLoan
 {
@@ -14,6 +15,8 @@ namespace expressLoan
         [STAThread]
         static void Main()
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());

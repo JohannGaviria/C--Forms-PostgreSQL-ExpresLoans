@@ -85,7 +85,7 @@
             this.gbDinero.Location = new System.Drawing.Point(585, 0);
             this.gbDinero.Name = "gbDinero";
             this.gbDinero.Padding = new System.Windows.Forms.Padding(0);
-            this.gbDinero.Size = new System.Drawing.Size(187, 40);
+            this.gbDinero.Size = new System.Drawing.Size(185, 40);
             this.gbDinero.TabIndex = 24;
             this.gbDinero.TabStop = false;
             // 
@@ -107,6 +107,7 @@
             this.btnExportar.TabIndex = 26;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnRetirar
             // 

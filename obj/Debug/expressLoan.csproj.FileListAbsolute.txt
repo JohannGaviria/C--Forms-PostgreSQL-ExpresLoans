@@ -49,3 +49,10 @@ C:\Users\johan\source\repos\expressLoan\bin\Debug\System.Threading.Channels.xml
 C:\Users\johan\source\repos\expressLoan\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\johan\source\repos\expressLoan\bin\Debug\System.ValueTuple.xml
 C:\Users\johan\source\repos\expressLoan\obj\Debug\expressL.8B2D8DB6.Up2Date
+C:\Users\johan\source\repos\expressLoan\bin\Debug\EPPlus.dll
+C:\Users\johan\source\repos\expressLoan\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\johan\source\repos\expressLoan\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\johan\source\repos\expressLoan\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\johan\source\repos\expressLoan\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\johan\source\repos\expressLoan\bin\Debug\EPPlus.xml
+C:\Users\johan\source\repos\expressLoan\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

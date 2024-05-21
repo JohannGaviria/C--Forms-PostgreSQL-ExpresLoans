@@ -32,7 +32,6 @@
             this.btnRegistrarPago = new System.Windows.Forms.Button();
             this.btnNuevoPrestamo = new System.Windows.Forms.Button();
             this.lblSaldo = new System.Windows.Forms.Label();
-            this.lblPrestamo = new System.Windows.Forms.Label();
             this.lblPagosRecientes = new System.Windows.Forms.Label();
             this.lblPrestamosPedientes = new System.Windows.Forms.Label();
             this.btnPagosRecientes = new System.Windows.Forms.Button();
@@ -43,7 +42,6 @@
             this.btnSaldo = new System.Windows.Forms.Button();
             this.dgvPagosRecientes = new System.Windows.Forms.DataGridView();
             this.lblSaldoNum = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbDinero = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosPedientes)).BeginInit();
             this.gbMenu.SuspendLayout();
@@ -88,16 +86,6 @@
             this.lblSaldo.Size = new System.Drawing.Size(67, 13);
             this.lblSaldo.TabIndex = 7;
             this.lblSaldo.Text = "Total Saldo: ";
-            // 
-            // lblPrestamo
-            // 
-            this.lblPrestamo.AutoSize = true;
-            this.lblPrestamo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.lblPrestamo.Location = new System.Drawing.Point(593, 45);
-            this.lblPrestamo.Name = "lblPrestamo";
-            this.lblPrestamo.Size = new System.Drawing.Size(81, 13);
-            this.lblPrestamo.TabIndex = 8;
-            this.lblPrestamo.Text = "Total Prestamo:";
             // 
             // lblPagosRecientes
             // 
@@ -200,23 +188,13 @@
             this.lblSaldoNum.TabIndex = 17;
             this.lblSaldoNum.Text = "999999999999";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label1.Location = new System.Drawing.Point(680, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "999999999999";
-            // 
             // gbDinero
             // 
             this.gbDinero.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.gbDinero.Location = new System.Drawing.Point(585, 0);
             this.gbDinero.Name = "gbDinero";
             this.gbDinero.Padding = new System.Windows.Forms.Padding(0);
-            this.gbDinero.Size = new System.Drawing.Size(187, 72);
+            this.gbDinero.Size = new System.Drawing.Size(185, 40);
             this.gbDinero.TabIndex = 19;
             this.gbDinero.TabStop = false;
             // 
@@ -226,14 +204,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(774, 451);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSaldoNum);
             this.Controls.Add(this.dgvPagosRecientes);
             this.Controls.Add(this.btnPrestamosPedientes);
             this.Controls.Add(this.btnPagosRecientes);
             this.Controls.Add(this.lblPrestamosPedientes);
             this.Controls.Add(this.lblPagosRecientes);
-            this.Controls.Add(this.lblPrestamo);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.dgvPrestamosPedientes);
             this.Controls.Add(this.gbMenu);
@@ -258,7 +234,6 @@
         private System.Windows.Forms.Button btnRegistrarPago;
         private System.Windows.Forms.Button btnNuevoPrestamo;
         private System.Windows.Forms.Label lblSaldo;
-        private System.Windows.Forms.Label lblPrestamo;
         private System.Windows.Forms.Label lblPagosRecientes;
         private System.Windows.Forms.Label lblPrestamosPedientes;
         private System.Windows.Forms.Button btnPagosRecientes;
@@ -268,7 +243,6 @@
         private System.Windows.Forms.GroupBox gbMenu;
         private System.Windows.Forms.DataGridView dgvPagosRecientes;
         private System.Windows.Forms.Label lblSaldoNum;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbDinero;
         private System.Windows.Forms.Button btnSaldo;
     }
