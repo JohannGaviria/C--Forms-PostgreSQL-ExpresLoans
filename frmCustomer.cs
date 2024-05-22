@@ -237,7 +237,6 @@ namespace expressLoan
             }
         }
 
-
         private void EliminarCliente(int clienteId)
         {
             Conexion.Conexion conexion = new Conexion.Conexion();
@@ -292,10 +291,10 @@ namespace expressLoan
                 try
                 {
                     string query = @"
-                SELECT * 
-                FROM clientes 
-                WHERE (CAST(id AS TEXT) = @termino_busqueda OR nombre ILIKE @termino_busqueda) 
-                AND usuario_id = @usuario_id";
+                                    SELECT * 
+                                    FROM clientes 
+                                    WHERE (CAST(id AS TEXT) = @termino_busqueda OR nombre ILIKE @termino_busqueda) 
+                                    AND usuario_id = @usuario_id";
 
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
@@ -391,7 +390,7 @@ namespace expressLoan
                 }
                 catch (NpgsqlException ex)
                 {
-                    MessageBox.Show("Error al cargar los préstamos pendientes: " + ex.Message);
+                    MessageBox.Show("Error al cargar los clientes: " + ex.Message);
                 }
                 finally
                 {

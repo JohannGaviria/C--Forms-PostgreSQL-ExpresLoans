@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\johan\\source\\repos\\expressLoan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmregisterpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmregisterpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmnewloans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmcustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|c:\\users\\johan\\source\\repos\\expressloan\\frmregisterpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{306342E3-7703-48F7-B57C-43F3BEBA924D}|expressLoan.csproj|solutionrelative:frmregisterpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,15 +42,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "frmHome.cs",
               "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs",
               "RelativeDocumentMoniker": "frmHome.cs",
               "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs",
               "RelativeToolTip": "frmHome.cs",
-              "ViewState": "AQIAAFAAAAAAZmZmZmYYwGAAAAAkAAAA",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAhwKwAAABuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T23:52:00.446Z",
+              "WhenOpened": "2024-05-22T00:39:21.323Z",
               "EditorCaption": ""
             },
             {
@@ -58,21 +62,8 @@
               "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmHome.cs [Dise\u00F1o]",
               "RelativeToolTip": "frmHome.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T23:51:58.123Z",
+              "WhenOpened": "2024-05-22T00:39:18.682Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmNewLoans.cs",
-              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs",
-              "RelativeDocumentMoniker": "frmNewLoans.cs",
-              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmNewLoans.cs",
-              "RelativeToolTip": "frmNewLoans.cs",
-              "ViewState": "AQIAAC0BAAAAaGZmZmYkwCYBAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T23:29:28.952Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -82,14 +73,39 @@
               "RelativeDocumentMoniker": "frmCustomer.cs",
               "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmCustomer.cs",
               "RelativeToolTip": "frmCustomer.cs",
-              "ViewState": "AQIAAPAAAABgmZmZmZk5wBoBAAAAAAAA",
+              "ViewState": "AQIAAKEAAACAdWZmZuYwwCcBAABxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T22:46:46.033Z",
+              "WhenOpened": "2024-05-22T00:17:29.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "frmRegisterPayment.cs",
+              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmRegisterPayment.cs",
+              "RelativeDocumentMoniker": "frmRegisterPayment.cs",
+              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmRegisterPayment.cs",
+              "RelativeToolTip": "frmRegisterPayment.cs",
+              "ViewState": "AQIAANAAAAAAAAAAAAAAANkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T00:02:49.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmRegisterPayment.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmRegisterPayment.cs",
+              "RelativeDocumentMoniker": "frmRegisterPayment.cs",
+              "ToolTip": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmRegisterPayment.cs [Dise\u00F1o]",
+              "RelativeToolTip": "frmRegisterPayment.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T23:59:09.038Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "frmCustomer.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\johan\\source\\repos\\expressLoan\\frmCustomer.cs",
               "RelativeDocumentMoniker": "frmCustomer.cs",

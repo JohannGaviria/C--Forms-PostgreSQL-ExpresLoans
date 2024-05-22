@@ -26,6 +26,7 @@ namespace expressLoan
         {
             lblSaldoNum.Text = SaldoManager.CargarSaldo(UserSession.UserId);
             MostrarPrestamosPedientes(dgvPrestamosPedientes);
+            MostrarPagosRecientes(dgvPagosRecientes);
         }
 
         private void frmHome_FormClosing(object sender, FormClosingEventArgs e)
@@ -123,6 +124,62 @@ namespace expressLoan
                 catch (NpgsqlException ex)
                 {
                     MessageBox.Show("Error al cargar los préstamos pendientes: " + ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se pudo establecer la conexión a la base de datos.");
+            }
+        }
+
+        private static void MostrarPagosRecientes(DataGridView dgvPagosRecientes)
+        {
+            Conexion.Conexion conexion = new Conexion.Conexion();
+            NpgsqlConnection conn = conexion.connection();
+
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+                try
+                {
+                    string query = @"SELECT p.id, c.nombre AS nombre_cliente, p.monto, p.fecha_pago
+                                    FROM prestamos p
+                                    INNER JOIN clientes c ON p.cliente_id = c.id
+                                    WHERE p.usuario_id = @usuario_id AND p.estado = 'Pagado' 
+                                    ORDER BY p.fecha_prestamo DESC 
+                                    LIMIT 8";
+
+
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario_id", UserSession.UserId);
+
+                        NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                        // Limpiar filas existentes y definir columnas si es necesario
+                        dgvPagosRecientes.Rows.Clear();
+                        dgvPagosRecientes.Columns.Clear();
+                        dgvPagosRecientes.Columns.Add("id", "ID");
+                        dgvPagosRecientes.Columns.Add("nombre", "Nombre");
+                        dgvPagosRecientes.Columns.Add("monto", "Monto");
+                        dgvPagosRecientes.Columns.Add("fecha", "Fecha");
+
+                        while (reader.Read())
+                        {
+                            // Agregar fila al DataGridView
+                            dgvPagosRecientes.Rows.Add(reader["id"], reader["nombre_cliente"], reader["monto"], reader["fecha_pago"]);
+                        }
+
+                        // Establecer el modo de ajuste automático de columnas
+                        dgvPagosRecientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    }
+                }
+                catch (NpgsqlException ex)
+                {
+                    MessageBox.Show("Error al cargar los préstamos: " + ex.Message);
                 }
                 finally
                 {
